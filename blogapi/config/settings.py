@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # 3-rd party
     'rest_framework',
+    'rest_framework.authtoken',  # This app generates tokens for the server
 
     # Local
     'posts.apps.PostsConfig',
@@ -128,6 +129,14 @@ STATIC_URL = '/static/'
 # DRF
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated'  # new
-    ]
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # This is for the Browsable API (Log in, log out)
+        # Default config made explicit
+        'rest_framework.authentication.SessionAuthentication',
+
+        'rest_framework.authentication.TokenAuthentication',  # new
+    ],
 }
