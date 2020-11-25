@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # 3-rd party
     'rest_framework',
     'rest_framework.authtoken',  # This app generates tokens for the server
+    'dj_rest_auth',
 
     # Local
     'posts.apps.PostsConfig',
