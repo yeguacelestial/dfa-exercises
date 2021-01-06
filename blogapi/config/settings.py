@@ -37,18 +37,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',  # new
+    'django.contrib.sites',
 
     # 3-rd party
     'rest_framework',
     'rest_framework.authtoken',  # This app generates tokens for the server
 
-    'allauth',  # new
-    'allauth.account',  # new
-    'allauth.socialaccount',  # new
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 
     'dj_rest_auth',
     'dj_rest_auth.registration',
+
+    'drf_yasg',
 
     # Local
     'posts.apps.PostsConfig',
@@ -145,11 +147,11 @@ REST_FRAMEWORK = {
         # Default config made explicit
         'rest_framework.authentication.SessionAuthentication',
 
-        'rest_framework.authentication.TokenAuthentication',  # new
+        'rest_framework.authentication.TokenAuthentication',
     ],
 }
 
 
 # Django ALL AUTH
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # new
-SITE_ID = 1  # new - This allows Django to host multiple websites - Used by dj-allauth
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SITE_ID = 1 # This allows Django to host multiple websites - Used by dj-allauth
